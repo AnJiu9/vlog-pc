@@ -5,7 +5,7 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import vuetify from '@/plugins/vuetify'
-axios.defaults.baseURL = 'http://vlog-pc-j.cn.utools.club'
+axios.defaults.baseURL = 'http://vlog-pc-j.cn.utools.club/api'
 
 Vue.use(VueAxios, axios)
 

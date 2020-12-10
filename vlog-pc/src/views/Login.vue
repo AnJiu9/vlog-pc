@@ -1,37 +1,50 @@
 <template>
   <div class="bg row">
-    <v-form ref="form" v-model="valid" lazy-validation class="col">
-      <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required></v-text-field>
+    <v-form ref="form" v-model="valid" lazy-validation class="col" v-if="!flag">
+      <v-text-field v-model="phone" :counter="11" :rules="phoneRules" label="Phone" required></v-text-field>
 
-      <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-
-      <v-select
-        v-model="select"
-        :items="items"
-        :rules="[(v) => !!v || 'Item is required']"
-        label="Item"
-        required
-      ></v-select>
+      <v-text-field v-model="password" :rules="passRules" label="Password" required></v-text-field>
 
       <v-checkbox
         v-model="checkbox"
-        :rules="[(v) => !!v || 'You must agree to continue!']"
-        label="Do you agree?"
+        :rules="[(v) => !!v || '同意才能继续!']"
+        label="同意社区协议?"
         required
       ></v-checkbox>
 
       <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
-        Validate
+        验证
       </v-btn>
 
-      <v-btn color="error" class="mr-4" @click="reset">
-        Reset Form
+      <v-btn color="primary" class="mr-4" @click="submit">
+        登录
       </v-btn>
 
-      <v-btn color="warning" @click="resetValidation">
-        Reset Validation
+      <v-btn color="warning" @click="reset">
+        重置
       </v-btn>
     </v-form>
+
+    <v-dialog v-model="flag" max-width="500" v-else>
+      <v-card>
+        <v-card-title class="headline grey lighten-2">
+          登录成功
+        </v-card-title>
+        <v-img height="250" src="https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201205181922.jpg"></v-img>
+        <v-card-text>
+          现在进入我的博客
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spaver></v-spaver>
+          <v-btn color="primary" text @click="flag = false">
+            I accept
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <v-overlay absolute  z-index="5" class="mask"></v-overlay>
   </div>
 </template>
@@ -39,18 +52,19 @@
 export default {
   name: 'Login',
   data: () => ({
+    flag: false,
     valid: true,
-    name: '',
-    nameRules: [
-      (v) => !!v || 'Name is required',
-      (v) => (v && v.length <= 10) || 'Name must be less than 10 characters'
+    phone: '',
+    phoneRules: [
+      (v) => !!v || '手机号不能为空',
+      (v) => (v && v.length === 11) || '手机号必须为11位'
     ],
-    email: '',
-    emailRules: [(v) => !!v || 'E-mail is required', (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'],
-    select: null,
-    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+    password: '',
+    passRules: [(v) => !!v || '密码不能为空', (v) => (v.length >=6 && v.length <= 10) || '密码必须在6到10位之间'],
     checkbox: false
   }),
+
+  created(){},
 
   methods: {
     validate() {
@@ -59,8 +73,21 @@ export default {
     reset() {
       this.$refs.form.reset()
     },
-    resetValidation() {
-      this.$refs.form.resetValidation()
+    submit(){
+      this.axios({
+        method: 'POST',
+        url: '/user/login',
+        data: {
+          phone: this.phone,
+          password: this.password
+        }
+      }).then((res) => {
+        if(res.data.code === 1){
+          this.flag = true
+          this.$store.commit('login', res.data.data);
+          this.$router.push('/')
+        }
+      })
     }
   }
 }
