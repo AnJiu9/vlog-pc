@@ -68,9 +68,16 @@
   </v-card>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
   data: () => ({
     show: true
-  })
+  }),
+  computed: {
+        ...mapState({
+            loginStatus: (state) => state.loginStatus,
+            user: (state) => state.user
+        })
+    }
 }
 </script>

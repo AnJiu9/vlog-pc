@@ -33,7 +33,35 @@ const routes = [
       {
         path: '/my',
         name: 'My',
-        component: () => import('../views/My.vue')
+        component: () => import('../views/My.vue'),
+        redirect: '/my/userinfo',
+        children:[
+          {
+            path: 'userinfo',
+            name: 'UserInfo',
+            component: () => import('../views/UserInfo.vue')
+          },
+          {
+            path: 'usersafe',
+            name: 'UserSafe',
+            component: () => import('../views/UserSafe.vue')
+          },
+          {
+            path: 'health',
+            name: 'Health',
+            component: () => import('../views/Health.vue')
+          },
+          {
+            path: 'feedback',
+            name: 'feedback',
+            component: () => import('../views/FeedBack.vue')
+          },
+          {
+            path: 'about',
+            name: 'About',
+            component: () => import('../views/About.vue')
+          }
+        ]
       }
     ]
   },
