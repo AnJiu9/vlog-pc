@@ -32,6 +32,10 @@
       </v-btn>
 
       <v-spacer></v-spacer>
+      <v-avatar>
+        <v-img :src="user.avatar"></v-img>
+      </v-avatar>
+
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
