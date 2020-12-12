@@ -14,7 +14,11 @@
 
       <v-app-bar-nav-icon @click="$router.push('/')"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Orange</v-toolbar-title>
+      <v-toolbar-title>
+        <div>
+          {{user.nickname}}
+        </div>
+      </v-toolbar-title>
 
       <v-btn value="recent" class="primary" @click="$router.push('/news')">
         <span>动态</span>

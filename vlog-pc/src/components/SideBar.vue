@@ -24,7 +24,7 @@
 
                 <v-list-item-content>
                     <v-list-item-title>{{user.phone}}</v-list-item-title>
-                    <v-list-item-subtitle>{{ gender }}</v-list-item-subtitle>
+                    <v-list-item-subtitle>{{ genderTxt }}</v-list-item-subtitle>
                 </v-list-item-content>
 
                 <v-list-item-icon>
@@ -32,6 +32,19 @@
                         mdi-message-text
                     </v-icon>
                 </v-list-item-icon>
+            </v-list-item>
+
+            <v-divider inset></v-divider>
+
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon color="grey">
+                        mdi-calendar
+                    </v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-title>{{user.birthday}}</v-list-item-title>
+                </v-list-item-content>
             </v-list-item>
 
             <v-divider inset></v-divider>
@@ -88,6 +101,8 @@
                     <v-list-item-title>意见反馈</v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
+
+            <v-divider inset></v-divider>
 
             <v-list-item @click="$router.push('/my/about')">
                 <v-list-item-icon>
