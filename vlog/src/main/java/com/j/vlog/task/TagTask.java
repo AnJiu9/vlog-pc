@@ -43,7 +43,7 @@ public class TagTask implements Callable<List<Tag>> {
         //需要get(0)，然后再获取其所有孩子结点，也就是所有的a标签
         Elements tags = tagChips.get(0).children();
         //遍历所有a标记
-        tags.forEach(TagName -> {
+        tags.forEach(tagNode -> {
             //通过取结点属性的方法， 得到"博客：4"这样的结果
             String title = tagNode.attr("title");
             //分割一下得到：之前的内容
