@@ -9,15 +9,15 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-        primary: colors.purple.lighten2,
-        secondary: colors.purple.lighten3,
-        accent: colors.purple.lighten4,
-        anchor: colors.purple.lighten2
+        primary: colors.green.darken1,
+        secondary: colors.green.lighten2,
+        accent: colors.green.lighten3,
+        anchor: colors.green.darken2
       },
       dark: {
-        primary: colors.cyan.darken3,
-        secondary: colors.cyan.darken1,
-        normal: colors.cyan.lighten3
+        primary: colors.green.darken3,
+        secondary: colors.green.darken1,
+        normal: colors.green.darken3
       }
     }
   }

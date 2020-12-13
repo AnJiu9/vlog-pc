@@ -2,7 +2,7 @@
   <v-row align="start">
     <v-col cols="20" md="3">
     </v-col>
-    <v-col cols="20" md="8">
+    <v-col cols="20" md="17">
         <v-card
             class="mx-auto"
             max-width="500"
@@ -26,17 +26,17 @@
         </v-list>
     </v-card>
   </v-col>
-  <v-col cols="20" md="9" class="ml-12">
+  <!-- <v-col cols="20" md="9" class="ml-12">
        <v-sparkline></v-sparkline>
-    </v-col>
+    </v-col> -->
   </v-row>
 </template>
 <script>
-import Sparklines from '../components/Sparklines'
+// import Sparklines from '../components/Sparklines'
 export default {
   name: 'Health',
   components:{
-    'v-sparkline':Sparklines
+    // 'v-sparkline':Sparklines
   },
   data: () => ({
       selectedItem: 1,

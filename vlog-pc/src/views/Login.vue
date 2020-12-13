@@ -11,13 +11,13 @@
         label="同意社区协议?"
         required
       ></v-checkbox>
-      <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
+      <!-- <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
         验证
-      </v-btn>
+      </v-btn> -->
       <v-btn color="primary" class="mr-4" @click="submit">
         登录
       </v-btn>
-      <v-btn color="warning" @click="reset">
+      <v-btn color="amber darken-1" @click="reset">
         重置
       </v-btn>
     </v-form>
@@ -31,12 +31,12 @@ export default {
   data: () => ({
     flag: false,
     valid: true,
-    phone: '',
+    phone: '18805150273',
     phoneRules: [
       (v) => !!v || '手机号不能为空',
       (v) => (v && v.length === 11) || '手机号必须为11位'
     ],
-    password: '',
+    password: '123123',
     passRules: [(v) => !!v || '密码不能为空', (v) => (v.length >=6 && v.length <= 10) || '密码必须在6到10位之间'],
     checkbox: false,
     verifyCode:''

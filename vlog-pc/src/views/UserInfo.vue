@@ -10,7 +10,7 @@
             required
         ></v-select>
         <v-row justify="start">
-            <v-date-picker v-model="birthdayPicker" elevation="5"></v-date-picker>
+            <v-date-picker v-model="birthdayPicker" elevation="5" header-color="green lighten-1" color="yellow darken-3"></v-date-picker>
         </v-row>
 
         <v-row justify="start" class="my-6">

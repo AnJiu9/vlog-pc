@@ -5,53 +5,58 @@
       color="#fcb69f"
       dark
       shrink-on-scroll
-      src="../assets/images/bg.jpg"
+      src="../assets/images/bz.jpg"
       scroll-target="#scrolling-techniques-2"
-    >
+    >    
       <template v-slot:img="{ props }">
-        <v-img v-bind="props" gradient="to top right, rgba(191,48,172,0.7), rgba(15,157,88,0.9)"></v-img>
+        <v-img v-bind="props" gradient="to top right, rgb(67, 198, 172,0.5), rgb(248, 255, 174,0.7)"></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="$router.push('/')"></v-app-bar-nav-icon>
-
+      <v-app-bar-nav-icon @click="$router.push('/')" color="teal darken-4"></v-app-bar-nav-icon>
+    
+    <v-row>
+      <v-col>
       <v-toolbar-title>
-        <div>
-          {{user.nickname}}
+        <div align="center">
+          {{user.nickname}}的个人博客
         </div>
       </v-toolbar-title>
+      </v-col>
+   
 
-      <v-btn value="recent" class="primary" @click="$router.push('/news')">
+      <v-btn value="recent" class="primary" @click="$router.push('/news')" rounded>
         <span>动态</span>
         <v-icon>mdi-exclamation-thick</v-icon>
       </v-btn>
 
-      <v-btn value="favorites" class="secondary" @click="$router.push('/message')">
+      <v-btn value="favorites" class="secondary" @click="$router.push('/message')" rounded>
         <span>消息</span>
         <v-icon>mdi-message-processing-outline</v-icon>
       </v-btn>
 
-      <v-btn value="nearby" class="accent" @click="$router.push('/my')">
+      <v-btn value="nearby" class="accent" @click="$router.push('/my')" rounded>
         <span>我的</span>
         <v-icon>mdi-home-circle-outline</v-icon>
       </v-btn>
-
+    </v-row>    
       <v-spacer></v-spacer>
+
       <v-avatar>
         <v-img :src="user.avatar"></v-img>
       </v-avatar>
 
       <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+        <v-icon color="yellow lighten-4">mdi-magnify</v-icon>
       </v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+        <v-icon color="yellow darken-1">mdi-heart</v-icon>
       </v-btn>
 
       <v-menu bottom left>
         <template v-slot:activator="{ on, attrs }">
           <v-btn icon color="pur" v-bind="attrs" v-on="on">
-            <v-icon>mdi-dots-vertical</v-icon>
+            <v-icon color="yellow darken-3">mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
 

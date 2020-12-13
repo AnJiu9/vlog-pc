@@ -3,13 +3,13 @@
         <v-img :src="imgSrc" height="300px" class="px-3 py-3" dark ref="img">
             <input type="file" @change="change" ref="input" style="display:none">
             <v-btn dark icon @click="handleClick">
-                <v-icon large>mdi-camera</v-icon>
+                <v-icon middle>mdi-camera-plus-outline</v-icon>
             </v-btn>
         </v-img>
             <v-row class="mt-4">
-                <v-btn class="mx-2" fab dark color="cyan" @click="uploadAvatar">
+                <v-btn class="mx-2" fab dark color="green darken-1" @click="uploadAvatar">
                     <v-icon dark>
-                        mdi-upload
+                        mdi-arrow-up-thick
                     </v-icon>
                 </v-btn>
             </v-row>
