@@ -3,7 +3,7 @@
     <v-row class="nav-transparent mx-2 pl-12" justify="space-between" align="center">
       <v-col cols="12" md="3">
         <router-link to="/index">
-          <h1 class="grey--text">{{user.nickname}}的博客</h1>
+          <h1 class="lime--text">{{user.nickname}}的博客</h1>
         </router-link>
       </v-col>
       <v-col cols="12" md="8">
@@ -77,6 +77,11 @@ export default {
         icon: 'mdi-account',
         text: '我的',
         path: '/my'
+      },
+      {
+        icon: 'mdi-alert-circle',
+        text: '暂无',
+        path: '/404'
       }
     ]
   }),

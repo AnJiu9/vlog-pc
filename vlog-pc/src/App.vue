@@ -3,7 +3,7 @@
     <v-main>
       <router-view />
     </v-main>
-    <v-btn class="mx-2" fab dark color="lime lighten-2" fixed botom right v-if="show" @click="backToTop">
+    <v-btn class="mx-2" fab dark color="light-green darken-3" fixed bottom right v-if="show" @click="backToTop">
       <v-icon dark>
         mdi-arrow-up
       </v-icon>
@@ -63,7 +63,7 @@ export default {
     scrollToTop(){
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       this.scrollTop = scrollTop
-      this.show = scrollTop > 400
+      this.show = scrollTop > 200
     }
   }
 }
