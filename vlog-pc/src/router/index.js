@@ -2,40 +2,58 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //vuetify提供的定位功能，回到上一个路由的时候可以定位到之前的位置
 import goTo from 'vuetify/es5/services/goto'
-import Layout from '../views/Layout.vue'
-import Login from '../views/Login.vue'
 import Index from '../views/Index.vue'
+import Layout from '../views/Layout.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/index',
+    name: 'Index',
+    component: Index
+  },
+  {
     path: '/',
-    name: 'Layout',
     component: Layout,
-    redirect: '/index',
+    redirectTo: '/tags',
     children: [
       {
-        path: 'index',
-        name: 'Index',
-        component: Index
-      },
-      {
-        path: '/news',
+        path: 'news',
         name: 'News',
         component: () => import('../views/News.vue')
       },
       {
-        path: '/message',
+        path: 'message',
         name: 'Message',
         component: () => import('../views/Message.vue')
       },
       {
-        path: '/my',
+        path: 'category',
+        name: 'Category',
+        component: () => import('../views/Category.vue')
+      },
+      {
+        path: 'achieve',
+        name: 'Achieve',
+        component: () => import('../views/Achieve.vue')
+      },
+      {
+        path: 'tag',
+        name: 'Tag',
+        component: () => import('../views/Tag.vue')
+      },
+      {
+        path: 'friend',
+        name: 'Friend',
+        component: () => import('../views/Friend.vue')
+      },
+      {
+        path: 'my',
         name: 'My',
         component: () => import('../views/My.vue'),
         redirect: '/my/userinfo',
-        children:[
+        children: [
           {
             path: 'userinfo',
             name: 'UserInfo',
@@ -47,13 +65,8 @@ const routes = [
             component: () => import('../views/UserSafe.vue')
           },
           {
-            path: 'health',
-            name: 'Health',
-            component: () => import('../views/Health.vue')
-          },
-          {
             path: 'feedback',
-            name: 'feedback',
+            name: 'FeedBack',
             component: () => import('../views/FeedBack.vue')
           },
           {
@@ -68,14 +81,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login,
-    children:[
-      {
-        path: '/',
-        name: 'Layout',
-        component: Layout,
-      }
-    ]
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/404',

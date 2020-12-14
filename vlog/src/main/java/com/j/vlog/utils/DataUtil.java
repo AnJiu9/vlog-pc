@@ -18,33 +18,57 @@ public class DataUtil {
                 Card.builder()
                     .id(1)
                     .title("Java学习")
-                    .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201205181922.jpg")
+                    .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163842.JPG")
                     .content("Java学习")
                     .build(),
                 Card.builder()
                     .id(2)
                     .title("Java Script学习")
-                    .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/55354673-67a3-42c8-8db1-d97b203e41bc.JPG")
+                    .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163845.JPG")
                     .content("Java Script学习")
                     .build(),
                 Card.builder()
                     .id(3)
                     .title("Linux学习")
-                    .bgImg("https://student-management-img.oss-cn-hangzhou.aliyuncs.com/bk-image/20201209222820.JPG")
+                    .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163847.JPG")
                     .content("Linux学习")
                     .build(),
                 Card.builder()
                     .id(4)
                     .title("MySQL学习")
-                    .bgImg("https://student-management-img.oss-cn-hangzhou.aliyuncs.com/logo/b8287be3-3f5b-424e-a72a-981795515da2.JPG")
+                    .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163846.JPG")
                     .content("MySQL学习")
                     .build(),
                 Card.builder()
                     .id(5)
                     .title("Python学习")
-                    .bgImg("https://student-management-img.oss-cn-hangzhou.aliyuncs.com/logo/20201123180501.JPG")
+                    .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163850.JPG")
                     .content("Python学习")
                     .build(),
+                Card.builder()
+                        .id(5)
+                        .title("Python学习")
+                        .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163855.JPG")
+                        .content("Python学习")
+                        .build(),
+                Card.builder()
+                        .id(1)
+                        .title("Java学习")
+                        .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163848.JPG")
+                        .content("Java学习")
+                        .build(),
+                Card.builder()
+                        .id(1)
+                        .title("Java学习")
+                        .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163852.JPG")
+                        .content("Java学习")
+                        .build(),
+                Card.builder()
+                        .id(1)
+                        .title("Java学习")
+                        .bgImg("https://share--app.oss-cn-hangzhou.aliyuncs.com/avatar/20201212163853.JPG")
+                        .content("Java学习")
+                        .build(),
         };
         return Arrays.asList(cards);
     }

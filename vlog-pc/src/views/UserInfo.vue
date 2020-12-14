@@ -27,7 +27,7 @@
         <v-btn color="primary" class="mr-12" @click="submit">
             提交
         </v-btn>
-        <v-btn color="success" @click="reset">
+        <v-btn color="amber darken-1" @click="reset">
             重置
         </v-btn>
     </v-form>

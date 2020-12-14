@@ -76,20 +76,6 @@
 
             <v-divider inset></v-divider>
 
-            <v-list-item @click="$router.push('/my/health')">
-                <v-list-item-icon>
-                    <v-icon color="grey">
-                        mdi-account-heart-outline
-                    </v-icon>
-                </v-list-item-icon>
-
-                <v-list-item-content>
-                    <v-list-item-title>个人健康</v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
-
-            <v-divider inset></v-divider>
-
             <v-list-item @click="$router.push('/my/feedback')">
                 <v-list-item-icon>
                     <v-icon color="grey">
