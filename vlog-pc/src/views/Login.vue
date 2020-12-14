@@ -21,6 +21,26 @@
         重置
       </v-btn>
     </v-form>
+    <v-dialog
+      v-model="dialog"
+      hide-overlay
+      persistent
+      width="300"
+    >
+      <v-card
+        color="primary"
+        dark
+      >
+        <v-card-text>
+          Please stand by
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
 
     <v-overlay absolute  z-index="5" class="mask"></v-overlay>
   </div>
@@ -39,7 +59,7 @@ export default {
     password: '123123',
     passRules: [(v) => !!v || '密码不能为空', (v) => (v.length >=6 && v.length <= 10) || '密码必须在6到10位之间'],
     checkbox: false,
-    verifyCode:''
+    verifyCode:'',
   }),
 
   created(){
