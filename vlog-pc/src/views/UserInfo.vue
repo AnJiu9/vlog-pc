@@ -67,15 +67,15 @@ export default {
             this.$refs.form.reset()
         },
         selectProvince(v){
-            console.log(v)
+            // console.log(v)
             this.addressSelect.province = v.value
         },
         selectCity(v){
-            console.log(v)
+            // console.log(v)
             this.addressSelect.city = v.value
         },
         selectArea(v){
-            console.log(v)
+            // console.log(v)
             this.addressSelect.area = v.value
         },
         getGenderTxt(){
@@ -89,14 +89,14 @@ export default {
             }
         },
         submit(){
-            alert(this.items.indexOf(this.genderSelect))
+            // alert(this.items.indexOf(this.genderSelect))
             let newUser = this.user
             newUser.nickname = this.nickname
             newUser.gender = this.items.indexOf(this.genderSelect)
             newUser.birthday = this.birthdayPicker
             newUser.address = `${this.addressSelect.province}${this.addressSelect.city}${this.addressSelect.area}`
             this.$store.commit('editUserInfo', newUser)
-            alert(JSON.stringify(newUser))
+            // alert(JSON.stringify(newUser))
             this.axios({
                 method: 'post',
                 url: '/user/update',

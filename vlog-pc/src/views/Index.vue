@@ -6,15 +6,15 @@
     </v-app-bar>
     <!-- 主体内容 -->
     <v-main>
-      <v-carousel cycle height="600" hide-delimiter-background show-arrows-on-hover>
+      <v-carousel cycle height="800" hide-delimiter-background show-arrows-on-hover>
         <v-carousel-item v-for="(slide, i) in slides" :key="i">
           <v-sheet height="100%">
             <v-row class="fill-height header">
-              <img :src="slide.src" class="slider-img"/>
+              <img :src="slide.src" class="slider-img" style="min-height:100%;min-width:100%;max-height:100%;max-width:100%;"/>
               <!-- 引入封装的顶部导航组件 -->
-              <div class="nav">
+              <!-- <div class="nav">
                 <nav-bar></nav-bar>
-              </div>
+              </div> -->
             </v-row>
           </v-sheet>
         </v-carousel-item>
