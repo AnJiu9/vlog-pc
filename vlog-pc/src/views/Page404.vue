@@ -51,7 +51,7 @@ export default {
 }
 .msg{
   position: absolute;
-  top: 280px;
+  top: 250px;
   left: 800px;
   font-size: 30px;
   font-weight: 400;

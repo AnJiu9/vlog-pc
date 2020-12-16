@@ -1,5 +1,6 @@
 package com.j.vlog.service;
 
+import com.github.pagehelper.PageInfo;
 import com.j.vlog.VlogApplication;
 import com.j.vlog.model.entity.Article;
 import com.j.vlog.task.ArticleTask;
@@ -40,8 +41,8 @@ class ArticleServiceTest {
     }
 
     @Test
-    void selectAll() {
-        List<Article> articles = articleService.selectAll();
-        System.out.println(articles);
+    void selectByPage() {
+        PageInfo<Article> articlePageInfo = articleService.selectByPage(1,9,1);
+        System.out.println(articlePageInfo.getList().size());
     }
 }
