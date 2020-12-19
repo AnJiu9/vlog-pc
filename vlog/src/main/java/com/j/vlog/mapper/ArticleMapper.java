@@ -72,7 +72,7 @@ public interface ArticleMapper {
      * @param userId 用户id
      * @return 文章集合
      */
-    @Select("SELECT id,category,user_id,title,cover,summary,publish_date FROM t_article a WHERE a.user_id = #{userId}")
+    @Select("SELECT id,category,user_id,title,cover,summary,publish_date FROM t_article a WHERE a.user_id = #{userId} ORDER BY publish_date DESC")
     @Results({
             @Result(id = true, property = "id", column = "id"),
             @Result(property = "category", column = "category"),
