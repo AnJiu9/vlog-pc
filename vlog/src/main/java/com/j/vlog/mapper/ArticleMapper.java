@@ -18,6 +18,17 @@ import java.util.List;
 public interface ArticleMapper {
 
     /**
+     * 新增文章
+     *
+     * @param article 入参
+     * @return int
+     */
+    @Insert("INSERT INTO t_article(id,category,user_id,title,cover,summary,content,publish_date,total_words,duration,page_view)" +
+            "VALUES (#{article.id},#{article.category},#{article.userId},#{article.title},#{article.cover},#{article.summary},#{article.content}," +
+            "#{article.publishDate},#{article.totalWords},#{article.duration},#{article.pageView})")
+    int add(@Param("article") Article article);
+
+    /**
      * 批量插入文章
      *
      * @param articleList 文章集合
