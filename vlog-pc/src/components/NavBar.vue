@@ -76,7 +76,7 @@ export default {
       {
         icon: 'mdi-account',
         text: '我的',
-        path: '/my'
+        path: '/my/' + this.user.id
       },
       {
         icon: 'mdi-pen',

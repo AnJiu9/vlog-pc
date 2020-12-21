@@ -103,7 +103,7 @@ export default {
     computed: {
         ...mapState({
             loginStatus: (state) => state.loginStatus,
-            user: (state) => state.user
+            loginUser: (state) => state.loginUser
         })
     },
     created() {
