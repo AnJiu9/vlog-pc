@@ -107,7 +107,7 @@ public class ArticleTask implements Callable<List<Article>> {
 
             Article article = Article.builder()
                     .id(id)
-                    .userId(1)
+                    .userId(DataUtil.getUserId())
                     .title(title)
                     .category(category)
                     .cover("https://picsum.photos/1920/1080?random&rand=" + Math.random())
