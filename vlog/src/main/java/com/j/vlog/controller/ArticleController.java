@@ -32,7 +32,7 @@ public class ArticleController {
     @PostMapping("page")
     public PageInfo<ArticleVo> getArticlesByPage(@RequestParam(name = "pageNum", defaultValue = "1", required = false) int pageNum,
                                                @RequestParam(name = "pageSize", defaultValue = "9", required = false) int pageSize) {
-        PageInfo<ArticleVo> articlePageInfo = articleService.selectByPage(pageNum,pageSize,getUserId());
+        PageInfo<ArticleVo> articlePageInfo = articleService.selectByPage(pageNum,pageSize);
         if (articlePageInfo == null) {
             throw new NullPointerException();
         }

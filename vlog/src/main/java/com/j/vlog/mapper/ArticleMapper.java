@@ -60,7 +60,7 @@ public interface ArticleMapper {
     /**
      * 分页查询所有文章
      *
-     * @return Page<Article>
+     * @return Page<ArticleVo>
      */
     @Select("SELECT a.id,a.category,a.user_id,a.title,a.cover,a.summary,a.create_time,b.nickname,b.avatar FROM t_article a " +
             "LEFT JOIN t_user b ON a.user_id = b.id  ORDER BY a.create_time DESC ")

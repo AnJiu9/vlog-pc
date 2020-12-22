@@ -30,6 +30,7 @@ export default new Vuex.Store({
       state.loginUser = user
       state.avatar = user.avatar
       localStorage.setItem('loginUser', JSON.stringify(user))
+      // console.log(user)
     },
     //访问用户页面
     visit(state, user){

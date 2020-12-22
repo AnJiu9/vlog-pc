@@ -50,13 +50,13 @@ public class ArticleSerciveImpl implements ArticleService {
     }
 
     @Override
-    public PageInfo<ArticleVo> selectByPage(int pageNum, int pageSize, int userId) {
+    public PageInfo<ArticleVo> selectByPage(int pageNum, int pageSize) {
         //将参数传给这个方法就可以实现物理分页
         PageHelper.startPage(pageNum, pageSize);
-        //根据用户id查到所有数据
+        //查到所有数据
         Page<ArticleVo> articlePage = articleMapper.selectAll();
         //将这些数据作为入参构建出PageInfo（包含了总页数，当前页码、每页数量、当前页数据List等一堆属性和方法）
-        return new PageInfo<>(articlePage);
+        return new PageInfo<ArticleVo>(articlePage);
     }
 
     @Override

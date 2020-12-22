@@ -34,10 +34,10 @@ public interface ArticleService {
      *
      * @param pageNum 页码
      * @param pageSize 每页数量
-     * @param userId 用户id
+//     * @param userId 用户id
      * @return 返回结果
      */
-    PageInfo<ArticleVo> selectByPage(int pageNum, int pageSize, int userId);
+    PageInfo<ArticleVo> selectByPage(int pageNum, int pageSize);
 
     /**
      * 根据文章id查找文章详情

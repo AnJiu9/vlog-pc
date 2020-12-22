@@ -43,7 +43,7 @@ class ArticleServiceTest {
 
     @Test
     void selectByPage() {
-        PageInfo<ArticleVo> articlePageInfo = articleService.selectByPage(1,9,1);
+        PageInfo<ArticleVo> articlePageInfo = articleService.selectByPage(1,9);
         System.out.println(articlePageInfo.getList().size());
     }
 

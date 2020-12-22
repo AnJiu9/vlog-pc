@@ -42,12 +42,13 @@
                       <v-icon class="mr-1">
                           mdi-calendar
                       </v-icon>
-                      <span class="text-md-h7 font-weight-medium mr-5">发布日期:{{article.publishDate}}</span>
+                      <span class="text-md-h7 font-weight-medium mr-5">发布日期:{{article.createTime}}</span>
                       <!-- 作者 -->
                       <v-icon class="mr-1">
                           mdi-account
                       </v-icon>
-                      <span class="text-md-h7 font-weight-medium mr-5">作者:{{user.nickname}}</span>
+                      <span class="text-md-h7 font-weight-medium mr-5" v-if="user.id === loginUser.id">作者:{{loginUser.nickname}}</span>
+                      <span class="text-md-h7 font-weight-medium mr-5" v-else>作者:{{user.nickname}}</span>
                       <!-- 文章字数 -->
                       <v-icon class="mr-1">
                           mdi-file
@@ -103,7 +104,8 @@ export default {
     computed: {
         ...mapState({
             loginStatus: (state) => state.loginStatus,
-            loginUser: (state) => state.loginUser
+            loginUser: (state) => state.loginUser,
+            user: (state) => state.user
         })
     },
     created() {
