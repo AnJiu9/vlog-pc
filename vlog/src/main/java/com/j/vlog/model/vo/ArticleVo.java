@@ -36,6 +36,7 @@ public class ArticleVo {
     private String duration;
     private String pageView;
     private List<ArticleTag> tagList;
+    private List<CommentVo> commentList;
     private String nickname;
     private String avatar;
 }

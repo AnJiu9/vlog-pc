@@ -31,6 +31,11 @@ public interface CommentMapper {
             "WHERE a.article_id = #{articleId} ORDER BY a.id DESC")
     List<CommentVo> selectByArticleId(@Param("articleId") String articleId);
 
+    /**
+     * 新增评论
+     *
+     * @param comment 评论
+     */
     @Insert("INSERT INTO t_comment (article_id, user_id, content, create_time) " +
             "VALUES (#{comment.articleId},#{comment.userId},#{comment.content},#{comment.createTime})")
     void addComment(@Param("comment")Comment comment);

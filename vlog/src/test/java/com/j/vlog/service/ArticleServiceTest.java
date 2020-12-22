@@ -57,7 +57,7 @@ class ArticleServiceTest {
 
     @Test
     void getDetail() {
-        Article detail = articleService.getDetail("00c4b67e137640c7b6fcf0df85212426");
+        ArticleVo detail = articleService.getDetail("00c4b67e137640c7b6fcf0df85212426");
         System.out.println(detail);
     }
 }

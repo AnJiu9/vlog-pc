@@ -49,8 +49,8 @@ public class ArticleController {
     }
 
     @GetMapping("{id}")
-    public Article getArticleDetail(@PathVariable String id) {
-        Article detail = articleService.getDetail(id);
+    public ArticleVo getArticleDetail(@PathVariable String id) {
+        ArticleVo detail = articleService.getDetail(id);
         if (detail == null) {
             throw new NullPointerException();
         }

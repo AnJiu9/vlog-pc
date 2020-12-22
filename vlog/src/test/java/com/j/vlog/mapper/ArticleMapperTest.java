@@ -50,7 +50,7 @@ class ArticleMapperTest {
 
     @Test
     void getDetail() {
-        Article article = articleMapper.getDetail("00f4ab8f109f45ea804581beca76af21");
+        ArticleVo article = articleMapper.getDetail("00f4ab8f109f45ea804581beca76af21");
         System.out.println(article);
     }
 }
